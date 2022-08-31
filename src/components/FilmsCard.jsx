@@ -6,6 +6,7 @@ import StarWars from "./StarWars";
 
 import BCard from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import useGetData from '../useGetData';
 
 const starWarsService = new StarWarsService();
 
@@ -23,12 +24,9 @@ const FilmCard = ({starwars}) =>
 
 
        
-        
-        
-       
     }
 
-    
+  
 
     useEffect (( ) =>{
         getFilms();
@@ -47,7 +45,7 @@ const FilmCard = ({starwars}) =>
 
 
 
- {data.map(data => <div className="card-body"> <h2>{data.title}</h2> <h3>{data.release_date}</h3> <h4>{data.episode_id}</h4>   <Link to={`/film/${ data.url.split('/')[5]}`}><h2>Lien vers le film</h2></Link></div> 
+ {data.map(data => <div className="card-body"> <h2>{data.title}</h2>  <h3>{data.release_date}</h3> <h4>{data.episode_id}</h4>   <Link to={`/film/${ data.url.split('/')[5]}`}><h2>Lien vers le film</h2></Link></div> 
             
             
             )}
