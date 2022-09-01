@@ -61,8 +61,8 @@ const IndividualVehicles = () => {
     return (
       <div>
         <h1>{data.name}</h1>
-        <p>{data.model}</p>
-        <h1>{data.manufacturer}</h1>
+        <h2>{data.model}</h2>
+        <h3>{data.manufacturer}</h3>
         <Card className="cards2">
           <h4>Cargo Capacity: {data.cargo_capacity}</h4>
           <h4>Consumables: {data.consumables}</h4>
@@ -93,8 +93,10 @@ const IndividualVehicles = () => {
                 {" "}
                 <Card.Body>
                   {" "}
-                  <Card.Title>{film.title}</Card.Title>
-                  <h2>{film.release_date}</h2>
+                  <Card.Title>
+                    <h1>{film.title}</h1>
+                  </Card.Title>
+                  <h2>Released on: {film.release_date}</h2>
                   <h2>{film.episode_id}th film</h2>
                 </Card.Body>{" "}
               </Card>

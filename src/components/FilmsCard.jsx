@@ -31,14 +31,13 @@ const FilmCard = ({ starwars }) => {
       <Col className="my-3">
         <CardGroup className="cards">
           {data.map((data) => (
-            <div className="cards2">
-              {" "}
-              <h2>{data.title}</h2> <h3>{data.release_date}</h3>{" "}
-              <h4>{data.episode_id}</h4>{" "}
-              <Link to={`/film/${data.url.split("/")[5]}`}>
-                <h2>Lien vers le film</h2>
-              </Link>
-            </div>
+            <Link to={`/film/${data.url.split("/")[5]}`}>
+              <div className="cards2">
+                {" "}
+                <h2>{data.title}</h2> <h3>Released on : {data.release_date}</h3>{" "}
+                <h4>{data.episode_id}th film</h4>{" "}
+              </div>
+            </Link>
           ))}
         </CardGroup>
       </Col>

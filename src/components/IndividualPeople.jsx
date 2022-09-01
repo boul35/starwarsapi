@@ -78,7 +78,9 @@ const IndividualPeople = () => {
               <Card.Body>
                 <Link to={`/starships/${starship.url.split("/")[5]}`}>
                   {" "}
-                  <Card.Title>{starship.name}</Card.Title>
+                  <Card.Title>
+                    <h1>{starship.name}</h1>
+                  </Card.Title>
                   <h2>{starship.model}</h2>{" "}
                   <h2>Made By : {starship.manufacturer}</h2>
                 </Link>{" "}
@@ -94,8 +96,10 @@ const IndividualPeople = () => {
               <Card.Body>
                 <Link to={`/film/${film.url.split("/")[5]}`}>
                   {" "}
-                  <Card.Title>{film.title}</Card.Title>
-                  <h2>{film.release_date}</h2>
+                  <Card.Title>
+                    <h1>{film.title}</h1>
+                  </Card.Title>
+                  <h2>Released on: {film.release_date}</h2>
                   <h2>{film.episode_id}th film</h2>
                 </Link>
               </Card.Body>{" "}
@@ -110,7 +114,9 @@ const IndividualPeople = () => {
               <Card.Body>
                 <Link to={`/vehicle/${vehicle.url.split("/")[5]}`}>
                   {" "}
-                  <Card.Title>{vehicle.name}</Card.Title>
+                  <Card.Title>
+                    <h1>{vehicle.name}</h1>
+                  </Card.Title>
                   <h2>{vehicle.model}</h2>
                 </Link>
               </Card.Body>{" "}

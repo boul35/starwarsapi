@@ -71,7 +71,7 @@ const IndividualStarShips = () => {
                 <Link to={`/film/${film.url.split("/")[5]}`}>
                   {" "}
                   <Card.Title>{film.title}</Card.Title>
-                  <h2>{film.release_date}</h2>
+                  <h2>Released on :{film.release_date}</h2>
                   <h2>{film.episode_id}th film</h2>
                 </Link>
               </Card.Body>{" "}

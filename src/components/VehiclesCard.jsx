@@ -31,14 +31,13 @@ const VehiclesCard = ({}) => {
         <h1>Vehicles</h1>
         <CardGroup className="cards">
           {data.map((data) => (
-            <div className="cards2">
-              {" "}
-              <h2>{data.name}</h2> <h3>{data.model}</h3>{" "}
-              <h4>{data.manufacturer}</h4>{" "}
-              <Link to={`/vehicles/${data.url.split("/")[5]}`}>
-                <h2>Lien vers le Vehicules</h2>
-              </Link>
-            </div>
+            <Link to={`/vehicles/${data.url.split("/")[5]}`}>
+              <div className="cards2">
+                {" "}
+                <h2>{data.name}</h2> <h3>{data.model}</h3>{" "}
+                <h4>{data.manufacturer}</h4>{" "}
+              </div>
+            </Link>
           ))}
         </CardGroup>
       </Col>
