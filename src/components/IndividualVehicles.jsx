@@ -19,16 +19,21 @@ const starWarsServicePlanets = new StarWarsServicePlanets();
 const starWarsServicePeople = new StarWarsServicePeople();
 const starWarsServiceVehicles = new StarWarsServiceVehicles();
 
-const IndividualFilm = () => {
+const IndividualVehicles = () => {
   const [data, setData] = useState(null);
   const params = useParams();
 
-  const getFilmsById = async () => {
+  const getVehiclesById = async () => {
     if (params.id) {
-      setData(await starWarsService.getFilmsById(params.id));
+      setData(await starWarsServiceVehicles.getVehiclesById(params.id));
         
     }
   };
+  
+  const films = useGetData(
+    starWarsService.getFilmsById.bind(starWarsService),
+    data?.films
+  )
 
   const starships = useGetData(
     starWarsServiceStarShips.getStarshipsById.bind(starWarsServiceStarShips),
@@ -40,9 +45,9 @@ const IndividualFilm = () => {
     data?.planets
   )
 
-  const characters = useGetData(
+  const pilots = useGetData(
     starWarsServicePeople.getPeopleById.bind(starWarsServicePeople),
-    data?.characters
+    data?.pilots
   )
 
   const vehicles = useGetData(
@@ -51,28 +56,41 @@ const IndividualFilm = () => {
   )
 
   useEffect(() => {
-    getFilmsById();
+    getVehiclesById();
   }, [params]);
   if (data) {
     return (
       <div>
-    <h1>{data.title}</h1>
-    <p>{data.opening_crawl}</p>
-    <h1>Starships</h1>
+    <h1>{data.name}</h1>
+    <p>{data.model}</p>
+    <h1>{data.manufacturer}</h1>
+    <Card className="cards2">
+        <h4>Cargo Capacity: {data.cargo_capacity}</h4>
+        <h4>Consumables: {data.consumables}</h4>
+        <h4>Cost in credits: {data.cost_in_credits}</h4>
+        <h4>Crew: {data.crew}</h4>
+        <h4>Max Atmosphering Speed: {data.max_atmosphering_speed}</h4>
+        <h4>Passengers: {data.passengers}</h4>
+
+    </Card>
     <CardGroup className="cards" >
     
     {starships.map(starship => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{starship.name}</Card.Title><h2>{starship.model}</h2> <h2>Made By :  {starship.manufacturer}</h2> </Card.Body> </Card> )}
             
     </CardGroup>
-    <h1>People</h1>
+    <h1>Films</h1>
     <CardGroup className="cards" >
+
+
+
     
-    {characters.map(character => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{character.name}</Card.Title><h2>{character.birth_year}</h2></Card.Body> </Card> )}
+    
+    {films.map(film =><Link to={`/film/${ data.url.split('/')[5]}`}> <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{film.title}</Card.Title><h2>{film.release_date}</h2><h2>{film.episode_id}th film</h2></Card.Body> </Card></Link> )}
             
     </CardGroup>    
-    <h1>Vehicles</h1>  
+    <h1>Pilots</h1>  
     <CardGroup className="cards" >
-    {vehicles.map(vehicle => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{vehicle.name}</Card.Title><h2>{vehicle.model}</h2><h2>{vehicle.manufacturer}</h2></Card.Body> </Card> )}
+    {pilots.map(character => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{character.name}</Card.Title><h2>{character.birth_year}</h2></Card.Body> </Card> )}
             
             </CardGroup>             
                 
@@ -86,4 +104,4 @@ const IndividualFilm = () => {
   
 };
 
-export default IndividualFilm;
+export default IndividualVehicles;
