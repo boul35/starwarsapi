@@ -11,6 +11,7 @@ import VehiclesCard from "./VehiclesCard";
 import IndividualVehicles from "./IndividualVehicles";
 import StarWarsLayOut from "./StarWarsLayOut";
 import IndividualPeople from "./IndividualPeople";
+import StarShipsCard from "./StarShipsCard"
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
 
           <Route path="/people/" element={<PeopleCard />} />
           <Route path="/people/:id" element={<IndividualPeople />} />
+
+          <Route path="/starships/" element={<StarShipsCard />} />
+          
         </Route>
      
       </Routes>

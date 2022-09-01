@@ -25,7 +25,7 @@ const IndividualPeople = () => {
 
   const getPeopleById = async () => {
     if (params.id) {
-      setData(await starWarsServiceVehicles.getPeopleById(params.id));
+      setData(await starWarsServicePeople.getPeopleById(params.id));
         
     }
   };
@@ -61,24 +61,20 @@ const IndividualPeople = () => {
   if (data) {
     return (
       <div>
+        <CardGroup className="cards" >
+            <Card className="cards2">
     <h1>{data.name}</h1>
-    <p>{data.birth_year}</p>
-    <h1>{data.eye_color}</h1>
-    <p>{data.hair_color}</p>
-    <p>{data.mass}</p>
-    <p>{data.skin_color}</p>
-    <Card className="cards2">
-        <h4>Cargo Capacity: {data.cargo_capacity}</h4>
-        <h4>Consumables: {data.consumables}</h4>
-        <h4>Cost in credits: {data.cost_in_credits}</h4>
-        <h4>Crew: {data.crew}</h4>
-        <h4>Max Atmosphering Speed: {data.max_atmosphering_speed}</h4>
-        <h4>Passengers: {data.passengers}</h4>
-
+    <p>Birth Year : {data.birth_year}</p>
+    <p>Eye Color : {data.eye_color}</p>
+    <p>Hair Color : {data.hair_color}</p>
+    <p>Mass : {data.mass}</p>
+    <p>Skin Color : {data.skin_color}</p>
     </Card>
+    </CardGroup>
+    <h1>StarShips</h1>
     <CardGroup className="cards" >
     
-    {starships.map(starship => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{starship.name}</Card.Title><h2>{starship.model}</h2> <h2>Made By :  {starship.manufacturer}</h2> </Card.Body> </Card> )}
+    {starships.map(starship => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body>  <Card.Title>{starship.name}</Card.Title><h2>{starship.model}</h2> <h2>Made By :  {starship.manufacturer}</h2> </Card.Body> </Card> )}
             
     </CardGroup>
     <h1>Films</h1>
@@ -88,12 +84,12 @@ const IndividualPeople = () => {
 
     
     
-    {films.map(film =><Link to={`/film/${ data.url.split('/')[5]}`}> <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{film.title}</Card.Title><h2>{film.release_date}</h2><h2>{film.episode_id}th film</h2></Card.Body> </Card></Link> )}
+    {films.map(film => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body><Link to={`/film/${ film.url.split('/')[5]}`}> <Card.Title>{film.title}</Card.Title><h2>{film.release_date}</h2><h2>{film.episode_id}th film</h2></Link></Card.Body> </Card> )}
             
     </CardGroup>    
-    <h1>Pilots</h1>  
+    <h1>Vehicles</h1>  
     <CardGroup className="cards" >
-    {pilots.map(character => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body> <Card.Title>{character.name}</Card.Title><h2>{character.birth_year}</h2></Card.Body> </Card> )}
+    {vehicles.map(vehicle => <Card className="cards2" style={{ width: '18rem' }}> <Card.Body><Link to={`/vehicle/${ vehicle.url.split('/')[5]}`}> <Card.Title>{vehicle.name}</Card.Title><h2>{vehicle.model}</h2></Link></Card.Body> </Card> )}
             
             </CardGroup>             
                 

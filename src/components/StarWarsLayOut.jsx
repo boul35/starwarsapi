@@ -20,6 +20,9 @@ const StarWarsLayOut = () => {
         <Navbar.Brand as={Link} to="/vehicles">
         <h3>Vehicles</h3>
         </Navbar.Brand>
+        <Navbar.Brand as={Link} to="/starships">
+        <h3>StarShips</h3>
+        </Navbar.Brand>
       </Navbar>
       <Outlet />
     </Container>

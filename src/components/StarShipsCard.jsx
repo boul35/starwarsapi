@@ -8,16 +8,17 @@ import BCard from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import useGetData from '../useGetData';
 import StarWarsServicePeople from "../service/star-wars-service-people";
+import StarWarsServiceStarShips from "../service/star-wars-service-starships";
 
-const starWarsServicePeople = new StarWarsServicePeople();
+const starWarsServiceStarShips = new StarWarsServiceStarShips();
 
-const PeopleCard = ({}) => 
+const StarShipsCard = ({}) => 
 
 
 { const [data,setData] = useState([]);
 
-    const getPeople = async () => {
-        const data  = await starWarsServicePeople.getPeople();
+    const getStarships = async () => {
+        const data  = await starWarsServiceStarShips.getStarships();
         console.log(data);
         console.log("test");
         
@@ -30,7 +31,7 @@ const PeopleCard = ({}) =>
   
 
     useEffect (( ) =>{
-        getPeople();
+        getStarships();
         
     }, []);
     
@@ -47,7 +48,7 @@ const PeopleCard = ({}) =>
 
         
         <CardGroup className="cards" >
- {data.map(data =>  <Link to={`/people/${ data.url.split('/')[5]}`}><div className="cards2"> <h2>{data.name}</h2>  <h3>{data.birth_year}</h3>  </div>  </Link>
+ {data.map(data =>  <div className="cards2"> <h2>{data.name}</h2>  <h3>{data.model}</h3> <h4>Made By : {data.manufacturer}</h4>  </div>  
             
             
             )}
@@ -63,4 +64,4 @@ const PeopleCard = ({}) =>
   
 };
 
-export default PeopleCard
+export default StarShipsCard
