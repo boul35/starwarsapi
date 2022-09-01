@@ -1,12 +1,16 @@
 class StarWarsServicePeople {
 
 
-    constructor() {}
-    
+    constructor() { }
+
+
+
+
+
     peopleUrl = "https://swapi.dev/api/people";
     url = "https://swapi.dev/api/people";
- 
-       
+
+
 
     async getPeople() {
 
@@ -22,36 +26,34 @@ class StarWarsServicePeople {
         }
     }
 
-    async getPeopleById(id)
-    
-    {
-		try {
-			const response = await fetch(`${this.peopleUrl}/${id}`);
-			if (!response.ok) throw new Error(response.statusText);
+    async getPeopleById(id) {
+        try {
+            const response = await fetch(`${this.peopleUrl}/${id}`);
+            if (!response.ok) throw new Error(response.statusText);
             return await response.json();
-			
-           
-		} catch (e) {
-			console.error(e);
 
-			return {};
-		}
-	}
+
+        } catch (e) {
+            console.error(e);
+
+            return {};
+        }
+    }
 
 
     async getStarWarsWithReturnedUrl(url) {
-		try {
-			const response = await fetch(url);
-			if (!response.ok) throw new Error(response.statusText);
-			return await response.json();
-		} catch (e) {
-			console.error(e);
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(response.statusText);
+            return await response.json();
+        } catch (e) {
+            console.error(e);
 
-			return {};
-		}
-	}
+            return {};
+        }
+    }
 
-    
+
 }
 
 export default StarWarsServicePeople;

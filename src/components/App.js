@@ -18,29 +18,29 @@ function App() {
   return (
 
     <BrowserRouter>
-    <Container>
- 
-      <Routes>
-      
-        
-        <Route path="/" element={<StarWarsLayOut />}>
-        <Route path="/film/" element={<FilmCard />} />
-        <Route path="/vehicles/" element={<VehiclesCard />} />
-        <Route path="/vehicles/:id" element={<IndividualVehicles />} />
-          <Route path="/test" element={<StarWars />} />
-          <Route path="/film/:id" element={<IndividualFilm />} />
+      <Container>
 
-          <Route path="/people/" element={<PeopleCard />} />
-          <Route path="/people/:id" element={<IndividualPeople />} />
+        <Routes>
 
-          <Route path="/starships/" element={<StarShipsCard />} />
-          <Route path="/starships/:id" element={<IndividualStarShips />} />
-          
-        </Route>
-     
-      </Routes>
-    </Container>
-  </BrowserRouter>
+
+          <Route path="/" element={<StarWarsLayOut />}>
+            <Route path="/film/" element={<FilmCard />} />
+            <Route path="/vehicles/" element={<VehiclesCard />} />
+            <Route path="/vehicles/:id" element={<IndividualVehicles />} />
+            <Route path="/test" element={<StarWars />} />
+            <Route path="/film/:id" element={<IndividualFilm />} />
+
+            <Route path="/people/" element={<PeopleCard />} />
+            <Route path="/people/:id" element={<IndividualPeople />} />
+
+            <Route path="/starships/" element={<StarShipsCard />} />
+            <Route path="/starships/:id" element={<IndividualStarShips />} />
+
+          </Route>
+
+        </Routes>
+      </Container>
+    </BrowserRouter>
   );
 }
 

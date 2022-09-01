@@ -1,12 +1,12 @@
 class StarWarsServicePlanets {
 
 
-    constructor() {}
-    
+    constructor() { }
+
     planetsUrl = "https://swapi.dev/api/planets";
     url = "https://swapi.dev/api/people";
- 
-       
+
+
 
     async getPlanets() {
 
@@ -22,36 +22,34 @@ class StarWarsServicePlanets {
         }
     }
 
-    async getPlanetsById(id)
-    
-    {
-		try {
-			const response = await fetch(`${this.planetsUrl}/${id}`);
-			if (!response.ok) throw new Error(response.statusText);
+    async getPlanetsById(id) {
+        try {
+            const response = await fetch(`${this.planetsUrl}/${id}`);
+            if (!response.ok) throw new Error(response.statusText);
             return await response.json();
-			
-           
-		} catch (e) {
-			console.error(e);
 
-			return {};
-		}
-	}
+
+        } catch (e) {
+            console.error(e);
+
+            return {};
+        }
+    }
 
 
     async getStarWarsWithReturnedUrl(url) {
-		try {
-			const response = await fetch(url);
-			if (!response.ok) throw new Error(response.statusText);
-			return await response.json();
-		} catch (e) {
-			console.error(e);
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(response.statusText);
+            return await response.json();
+        } catch (e) {
+            console.error(e);
 
-			return {};
-		}
-	}
+            return {};
+        }
+    }
 
-    
+
 }
 
 export default StarWarsServicePlanets;

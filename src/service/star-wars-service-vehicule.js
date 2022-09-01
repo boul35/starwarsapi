@@ -1,12 +1,12 @@
 class StarWarsServiceStarVehicles {
 
 
-    constructor() {}
-    
+    constructor() { }
+
     vehiclesUrl = "https://swapi.dev/api/vehicles";
     url = "https://swapi.dev/api/people";
- 
-       
+
+
 
     async getVehicles() {
 
@@ -22,36 +22,34 @@ class StarWarsServiceStarVehicles {
         }
     }
 
-    async getVehiclesById(id)
-    
-    {
-		try {
-			const response = await fetch(`${this.vehiclesUrl}/${id}`);
-			if (!response.ok) throw new Error(response.statusText);
+    async getVehiclesById(id) {
+        try {
+            const response = await fetch(`${this.vehiclesUrl}/${id}`);
+            if (!response.ok) throw new Error(response.statusText);
             return await response.json();
-			
-           
-		} catch (e) {
-			console.error(e);
 
-			return {};
-		}
-	}
+
+        } catch (e) {
+            console.error(e);
+
+            return {};
+        }
+    }
 
 
     async getStarWarsWithReturnedUrl(url) {
-		try {
-			const response = await fetch(url);
-			if (!response.ok) throw new Error(response.statusText);
-			return await response.json();
-		} catch (e) {
-			console.error(e);
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(response.statusText);
+            return await response.json();
+        } catch (e) {
+            console.error(e);
 
-			return {};
-		}
-	}
+            return {};
+        }
+    }
 
-    
+
 }
 
 export default StarWarsServiceStarVehicles;

@@ -39,7 +39,7 @@ const StarWars = () => {
       setData(
         await Promise.all(
           initial.map((starwars) =>
-          starWarsService.getStarWarsWithReturnedUrl(starwars.url)
+            starWarsService.getStarWarsWithReturnedUrl(starwars.url)
           )
         )
       );
@@ -62,9 +62,7 @@ const StarWars = () => {
     };
   }, [next]);
 
-  return starwars={data}
-  
-  
+  return (starwars = { data });
 };
 
 export default StarWars;
