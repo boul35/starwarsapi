@@ -87,7 +87,7 @@ const IndividualVehicles = () => {
         <h1>Films</h1>
         <CardGroup className="cards">
           {films.map((film) => (
-            <Link to={`/film/${data.url.split("/")[5]}`}>
+            <Link to={`/film/${film.url.split("/")[5]}`}>
               {" "}
               <Card className="cards2" style={{ width: "18rem" }}>
                 {" "}
@@ -102,16 +102,19 @@ const IndividualVehicles = () => {
           ))}
         </CardGroup>
         <h1>Pilots</h1>
+
         <CardGroup className="cards">
           {pilots.map((character) => (
-            <Card className="cards2" style={{ width: "18rem" }}>
-              {" "}
-              <Card.Body>
+            <Link to={"`/people/${character.url.split(" / ")[5]}` "}>
+              <Card className="cards2" style={{ width: "18rem" }}>
                 {" "}
-                <Card.Title>{character.name}</Card.Title>
-                <h2>{character.birth_year}</h2>
-              </Card.Body>{" "}
-            </Card>
+                <Card.Body>
+                  {" "}
+                  <Card.Title>{character.name}</Card.Title>
+                  <h2>{character.birth_year}</h2>
+                </Card.Body>{" "}
+              </Card>
+            </Link>
           ))}
         </CardGroup>
       </div>
