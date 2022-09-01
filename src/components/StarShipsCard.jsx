@@ -48,7 +48,7 @@ const StarShipsCard = ({}) =>
 
         
         <CardGroup className="cards" >
- {data.map(data =>  <div className="cards2"> <h2>{data.name}</h2>  <h3>{data.model}</h3> <h4>Made By : {data.manufacturer}</h4>  </div>  
+ {data.map(data =><Link to={`/starships/${data.url.split('/')[5]}`}>  <div className="cards2"> <h2>{data.name}</h2>  <h3>{data.model}</h3> <h4>Made By : {data.manufacturer}</h4>  </div>  </Link>
             
             
             )}
