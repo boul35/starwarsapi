@@ -7,12 +7,10 @@ import StarWarsServiceStarShips from "../service/star-wars-service-starships";
 import StarWarsServicePlanets from "../service/star-wars-service-planets";
 import StarWarsServicePeople from "../service/star-wars-service-people";
 import StarWarsServiceVehicles from "../service/star-wars-service-vehicule";
-import StarWars from "./StarWars";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CardGroup from "react-bootstrap/CardGroup";
 import useGetData from "../useGetData";
-import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 const starWarsService = new StarWarsService();
 const starWarsServiceStarShips = new StarWarsServiceStarShips();
@@ -67,7 +65,9 @@ const IndividualFilm = () => {
                   {" "}
                   <Card.Body>
                     {" "}
-                    <Card.Title>{starship.name}</Card.Title>
+                    <Card.Title>
+                      <h1>{starship.name}</h1>
+                    </Card.Title>
                     <h2>{starship.model}</h2>{" "}
                     <h2>Made By : {starship.manufacturer}</h2>{" "}
                   </Card.Body>{" "}
