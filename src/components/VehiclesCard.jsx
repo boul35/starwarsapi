@@ -15,8 +15,6 @@ const VehiclesCard = ({}) => {
 
   const getVehicles = async () => {
     const data = await starWarsServiceStarVehicles.getVehicles();
-    console.log(data);
-    console.log("test");
 
     setData(data);
   };

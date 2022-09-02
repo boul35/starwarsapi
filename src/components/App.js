@@ -5,7 +5,7 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import IndividualFilm from "./IndividualFilms";
 import PeopleCard from "./PeopleCard"
-import PokeCard from "./test";
+
 import StarWars from "./StarWars";
 import VehiclesCard from "./VehiclesCard";
 import IndividualVehicles from "./IndividualVehicles";

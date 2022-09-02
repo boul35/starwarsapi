@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import StarWarsService from "../service/star-wars-service";
 import { Link, useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import StarWars from "./StarWars";
 import CardGroup from "react-bootstrap/CardGroup";
-
-import BCard from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import useGetData from "../useGetData";
 
 const starWarsService = new StarWarsService();
 
@@ -16,8 +12,6 @@ const FilmCard = ({ starwars }) => {
 
   const getFilms = async () => {
     const data = await starWarsService.getFilms();
-    console.log(data);
-    console.log("test");
 
     setData(data);
   };
