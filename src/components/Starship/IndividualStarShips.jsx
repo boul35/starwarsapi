@@ -2,20 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import StarWarsService from "../service/star-wars-service";
-import StarWarsServiceStarShips from "../service/star-wars-service-starships";
-import StarWarsServicePlanets from "../service/star-wars-service-planets";
-import StarWarsServicePeople from "../service/star-wars-service-people";
-import StarWarsServiceVehicles from "../service/star-wars-service-vehicule";
-import StarWars from "./StarWars";
+import StarWarsService from "../Film/Service/star-wars-service";
+import StarWarsServiceStarShips from "../Starship/Service/star-wars-service-starships";
+import StarWarsServicePeople from "../People/Service/star-wars-service-people";
+import StarWarsServiceVehicles from "../Vehicle/Service/star-wars-service-vehicule";
 import { Link } from "react-router-dom";
 import CardGroup from "react-bootstrap/CardGroup";
-import useGetData from "../useGetData";
-import Col from "react-bootstrap/Col";
+import useGetData from "../../useGetData";
 import Card from "react-bootstrap/Card";
 const starWarsService = new StarWarsService();
 const starWarsServiceStarShips = new StarWarsServiceStarShips();
-const starWarsServicePlanets = new StarWarsServicePlanets();
 const starWarsServicePeople = new StarWarsServicePeople();
 const starWarsServiceVehicles = new StarWarsServiceVehicles();
 
@@ -32,11 +28,6 @@ const IndividualStarShips = () => {
   const films = useGetData(
     starWarsService.getFilmsById.bind(starWarsService),
     data?.films
-  );
-
-  const planets = useGetData(
-    starWarsServicePlanets.getPlanetsById.bind(starWarsServicePlanets),
-    data?.planets
   );
 
   const pilots = useGetData(

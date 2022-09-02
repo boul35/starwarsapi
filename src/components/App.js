@@ -1,18 +1,18 @@
-import FilmCard from "./FilmsCard";
+import FilmCard from "./Film/FilmsCard";
 import Container from "react-bootstrap/Container";
 import React from "react";
 
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import IndividualFilm from "./IndividualFilms";
-import PeopleCard from "./PeopleCard"
+import IndividualFilm from "./Film/IndividualFilms";
+import PeopleCard from "./People/PeopleCard"
 
 import StarWars from "./StarWars";
-import VehiclesCard from "./VehiclesCard";
-import IndividualVehicles from "./IndividualVehicles";
+import VehiclesCard from "./Vehicle/VehiclesCard";
+import IndividualVehicles from "./Vehicle/IndividualVehicles";
 import StarWarsLayOut from "./StarWarsLayOut";
-import IndividualPeople from "./IndividualPeople";
-import StarShipsCard from "./StarShipsCard"
-import IndividualStarShips from "./IndividualStarShips"
+import IndividualPeople from "./People/IndividualPeople";
+import StarShipsCard from "./Starship/StarShipsCard"
+import IndividualStarShips from "./Starship/IndividualStarShips"
 
 function App() {
   return (

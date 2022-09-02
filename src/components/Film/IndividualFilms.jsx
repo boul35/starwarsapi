@@ -2,15 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import StarWarsService from "../service/star-wars-service";
-import StarWarsServiceStarShips from "../service/star-wars-service-starships";
-import StarWarsServicePlanets from "../service/star-wars-service-planets";
-import StarWarsServicePeople from "../service/star-wars-service-people";
-import StarWarsServiceVehicles from "../service/star-wars-service-vehicule";
+import StarWarsService from "./Service/star-wars-service";
+import StarWarsServiceStarShips from "../Starship/Service/star-wars-service-starships";
+import StarWarsServicePlanets from "../../service/star-wars-service-planets";
+import StarWarsServicePeople from "../People/Service/star-wars-service-people";
+import StarWarsServiceVehicles from "../Vehicle/Service/star-wars-service-vehicule";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CardGroup from "react-bootstrap/CardGroup";
-import useGetData from "../useGetData";
+import useGetData from "../../useGetData";
 import Card from "react-bootstrap/Card";
 const starWarsService = new StarWarsService();
 const starWarsServiceStarShips = new StarWarsServiceStarShips();
@@ -95,7 +95,7 @@ const IndividualFilm = () => {
           <h1>Vehicles</h1>
           <CardGroup className="cards">
             {vehicles.map((vehicle) => (
-              <Link to={`/vehicle/${vehicle.url.split("/")[5]}`}>
+              <Link to={`/vehicles/${vehicle.url.split("/")[5]}`}>
                 <Card className="cards2" style={{ width: "18rem" }}>
                   {" "}
                   <Card.Body>

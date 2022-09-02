@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import StarWarsService from "../service/star-wars-service";
+import StarWarsService from "../Film/Service/star-wars-service";
 import { Link, useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import StarWars from "./StarWars";
-import StarWarsServiceStarVehicles from "../service/star-wars-service-vehicule";
+import StarWars from "../StarWars";
+import StarWarsServiceStarVehicles from "./Service/star-wars-service-vehicule";
 import BCard from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import useGetData from "../useGetData";
+import useGetData from "../../useGetData";
 import CardGroup from "react-bootstrap/CardGroup";
 const starWarsServiceStarVehicles = new StarWarsServiceStarVehicles();
 

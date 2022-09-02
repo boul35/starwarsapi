@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import StarWarsService from "../service/star-wars-service";
-
+import StarWarsService from "./Film/Service/star-wars-service";
 
 const starWarsService = new StarWarsService();
 

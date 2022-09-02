@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StarWarsService from "../service/star-wars-service";
+import StarWarsService from "./Service/star-wars-service";
 import { Link, useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import CardGroup from "react-bootstrap/CardGroup";

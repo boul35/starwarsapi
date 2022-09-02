@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import CardGroup from "react-bootstrap/CardGroup";
-import StarWarsServicePeople from "../service/star-wars-service-people";
+import StarWarsServicePeople from "./Service/star-wars-service-people";
 
 const starWarsServicePeople = new StarWarsServicePeople();
 
