@@ -103,7 +103,7 @@ const IndividualPeople = () => {
             <Card className="cards2" style={{ width: "18rem" }}>
               {" "}
               <Card.Body>
-                <Link to={`/vehicle/${vehicle.url.split("/")[5]}`}>
+                <Link to={`/vehicles/${vehicle.url.split("/")[5]}`}>
                   {" "}
                   <Card.Title>
                     <h1>{vehicle.name}</h1>
