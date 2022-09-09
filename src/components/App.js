@@ -15,6 +15,7 @@ import StarWarsLayOut from "./StarWarsLayOut";
 import IndividualPeople from "./People/IndividualPeople";
 import StarShipsCard from "./Starship/StarShipsCard"
 import IndividualStarShips from "./Starship/IndividualStarShips"
+import User from "../auth/components/User";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
     <BrowserRouter>
       <AppContainer>
         <Container>
-
+          <User />
           <Routes>
             <Route path='login' element={<AuthLayout />} />
 

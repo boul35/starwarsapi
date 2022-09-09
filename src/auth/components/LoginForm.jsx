@@ -13,7 +13,7 @@ import useGoogleSignin from "../hooks/useGoogleSignin";
 const initialValues = {
   email: "",
   name: "",
-  password: "",
+  password: "TestTest123",
 };
 
 const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[-_@\.A-Za-z\d]{8,}$/;

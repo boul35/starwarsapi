@@ -6,8 +6,10 @@ import {
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
-    signOut
+    signOut,
+    browserPopupRedirectResolver
 } from "firebase/auth";
+
 class AuthService {
     configs = {
         apiKey: process.env.REACT_APP_API_KEY,
@@ -18,33 +20,44 @@ class AuthService {
         appId: process.env.REACT_APP_APP_ID,
         measurementId: process.env.REACT_APP_MEASUREMENT_ID
     }
-    auth = initializeAuth(this.app());
-    constructor() {
-        console.log(this.auth)
-    }
+
+    constructor() { }
+
+    auth = initializeAuth(this.app(), {
+        popupRedirectResolver: browserPopupRedirectResolver,
+    });
+
     app() {
         return getApps().length ? getApp() : initializeApp(this.configs);
     }
+
     onAuthChange(callback) {
         onAuthStateChanged(this.auth, callback);
     }
+
     async signupWithEmailAndPassword(email, password) {
         await createUserWithEmailAndPassword(this.auth, email, password)
     }
+
     async signinWithEmailAndPassword(email, password) {
         try {
             await signInWithEmailAndPassword(this.auth, email, password);
         } catch (error) {
             if (error.code === "auth/user-not-found") {
                 this.signupWithEmailAndPassword(email, password)
+            } else {
+                console.error(error);
             }
         }
     }
+
     async signinWithGoogle() {
         await signInWithPopup(this.auth, new GoogleAuthProvider());
     }
+
     async logout() {
         await signOut(this.auth);
     }
 }
+
 export default AuthService;

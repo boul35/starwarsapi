@@ -14,7 +14,7 @@ const AppContainer = ({ children }) => {
   const onAuth = (user) => {
     if (user) {
       dispatch(updateWholeUser({ email: user.email }));
-      navigate("/pokemon");
+      navigate("/");
     } else {
       navigate("/login");
       dispatch(resetUser());
