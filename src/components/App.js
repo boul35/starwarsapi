@@ -5,7 +5,9 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import IndividualFilm from "./Film/IndividualFilms";
 import PeopleCard from "./People/PeopleCard"
+import AppContainer from '../auth/components/AppContainer';
 
+import AuthLayout from '../auth/components/AuthLayout';
 import StarWars from "./StarWars";
 import VehiclesCard from "./Vehicle/VehiclesCard";
 import IndividualVehicles from "./Vehicle/IndividualVehicles";
@@ -18,28 +20,30 @@ function App() {
   return (
 
     <BrowserRouter>
-      <Container>
+      <AppContainer>
+        <Container>
 
-        <Routes>
+          <Routes>
+            <Route path='login' element={<AuthLayout />} />
 
+            <Route path="/" element={<StarWarsLayOut />}>
+              <Route path="/film/" element={<FilmCard />} />
+              <Route path="/vehicles/" element={<VehiclesCard />} />
+              <Route path="/vehicles/:id" element={<IndividualVehicles />} />
+              <Route path="/test" element={<StarWars />} />
+              <Route path="/film/:id" element={<IndividualFilm />} />
 
-          <Route path="/" element={<StarWarsLayOut />}>
-            <Route path="/film/" element={<FilmCard />} />
-            <Route path="/vehicles/" element={<VehiclesCard />} />
-            <Route path="/vehicles/:id" element={<IndividualVehicles />} />
-            <Route path="/test" element={<StarWars />} />
-            <Route path="/film/:id" element={<IndividualFilm />} />
+              <Route path="/people/" element={<PeopleCard />} />
+              <Route path="/people/:id" element={<IndividualPeople />} />
 
-            <Route path="/people/" element={<PeopleCard />} />
-            <Route path="/people/:id" element={<IndividualPeople />} />
+              <Route path="/starships/" element={<StarShipsCard />} />
+              <Route path="/starships/:id" element={<IndividualStarShips />} />
 
-            <Route path="/starships/" element={<StarShipsCard />} />
-            <Route path="/starships/:id" element={<IndividualStarShips />} />
+            </Route>
 
-          </Route>
-
-        </Routes>
-      </Container>
+          </Routes>
+        </Container>
+      </AppContainer>
     </BrowserRouter>
   );
 }
