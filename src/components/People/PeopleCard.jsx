@@ -3,23 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import CardGroup from "react-bootstrap/CardGroup";
 import StarWarsServicePeople from "./Service/star-wars-service-people";
-
-const starWarsServicePeople = new StarWarsServicePeople();
+import useFetchPeople from "../hooks/useFetchPeople";
 
 const PeopleCard = ({}) => {
-  const [data, setData] = useState([]);
-
-  const getPeople = async () => {
-    const data = await starWarsServicePeople.getPeople();
-    console.log(data);
-    console.log("test");
-
-    setData(data);
-  };
-
-  useEffect(() => {
-    getPeople();
-  }, []);
+  const data = useFetchPeople();
 
   return (
     <Container>

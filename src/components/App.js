@@ -13,9 +13,10 @@ import VehiclesCard from "./Vehicle/VehiclesCard";
 import IndividualVehicles from "./Vehicle/IndividualVehicles";
 import StarWarsLayOut from "./StarWarsLayOut";
 import IndividualPeople from "./People/IndividualPeople";
-import StarShipsCard from "./Starship/StarShipsCard"
+
 import IndividualStarShips from "./Starship/IndividualStarShips"
 import User from "../auth/components/User";
+import Starship from "./Starship/StarShip";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
               <Route path="/people/" element={<PeopleCard />} />
               <Route path="/people/:id" element={<IndividualPeople />} />
 
-              <Route path="/starships/" element={<StarShipsCard />} />
+              <Route path="/starships/" element={<Starship />} />
               <Route path="/starships/:id" element={<IndividualStarShips />} />
 
             </Route>
